@@ -1,10 +1,12 @@
-
-
 :root {
   --background-animation-duration: 20s;
   --primary-orange: #FF6B00;
   --primary-gray: #333333;
   --header-height: 80px;
+  --card-bg: rgba(24, 24, 36, 0.95);
+  --card-border: 2px solid var(--primary-orange, #ff9800);
+  --card-shadow: 0 2px 16px 0 #ff98001a;
+  --card-shadow-hover: 0 8px 32px 0 #ff980044;
 }
 
 body {
@@ -118,4 +120,27 @@ body {
   max-width: 800px;
   padding: 0 1rem;
 
+}
+
+// Animaciones comunes
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -44,7 +44,7 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-100px);
     opacity: 0;
   }
   to {
@@ -163,9 +163,9 @@
 .service-card {
   position: relative;
   overflow: hidden;
-  background: rgba(24, 24, 36, 0.95);
+  background: var(--card-bg);
   color: #fff;
-  border-radius: 22px;
+  border-radius: 18px;
   min-width: 260px;
   min-height: 160px;
   width: 320px;
@@ -176,17 +176,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 16px 0 #ff98001a;
+  box-shadow: var(--card-shadow);
   letter-spacing: 1px;
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
-  border: 2px solid transparent;
-}
+  border: var(--card-border);
 
-.service-card:hover {
-  transform: scale(1.10);
-  box-shadow: 0 8px 32px 0 #ff980044;
-  border: 2px solid var(--primary-orange, #ff9800);
+  &:hover {
+    transform: scale(1.10);
+    box-shadow: var(--card-shadow-hover);
+  }
 }
 
 .service-img {
@@ -358,8 +357,8 @@
   }
 
   .trusted-card {
-    background: rgba(24, 24, 36, 0.95);
-    border: 2px solid #ff9800;
+    background: var(--card-bg);
+    border: var(--card-border);
     border-radius: 16px;
     min-height: 110px;
     display: flex;
@@ -369,12 +368,13 @@
     font-weight: 600;
     color: #fff;
     transition: box-shadow 0.2s, border-color 0.2s;
-    box-shadow: 0 2px 16px 0 #ff98001a;
+    box-shadow: var(--card-shadow);
     letter-spacing: 0.5px;
-  }
-  .trusted-card:hover {
-    border-color: #ffa733;
-    box-shadow: 0 4px 24px 0 #ff980044;
+
+    &:hover {
+      border-color: #ffa733;
+      box-shadow: var(--card-shadow-hover);
+    }
   }
 }
 
@@ -488,7 +488,7 @@
 
 @keyframes slideInRight {
   from {
-    transform: translateX(100%);
+    transform: translateX(100px);
     opacity: 0;
   }
   to {
@@ -508,9 +508,18 @@
   }
   .provide-images {
     margin-top: 3rem;
+    img {
+      width: 290px;
+    }
   }
-  .provide-images img {
-    width: 290px;
+  .service-card {
+    width: 220px;
+    height: 140px;
+    font-size: 2.1rem;
+  }
+  .service-desc {
+    font-size: 1.1rem;
+    max-width: 260px;
   }
 }
 @media (max-width: 900px) {
@@ -528,10 +537,53 @@
   }
   .provide-images {
     margin-top: 2rem;
+    img {
+      width: 98vw;
+      max-width: 410px;
+    }
   }
-  .provide-images img {
-    width: 98vw;
-    max-width: 410px;
+  .service-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .service-card {
+    width: 90vw;
+    min-width: 0;
+    height: 90px;
+    font-size: 1.3rem;
+  }
+  .service-desc {
+    font-size: 1rem;
+    max-width: 95vw;
+    margin-left: 0;
+  }
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .team-card {
+    min-width: 0;
+    max-width: 95vw;
+    width: 95vw;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .team-title {
+    font-size: 2.1rem;
+  }
+  .mockup-row {
+    gap: 1.2rem;
+  }
+  .mockup-img.left, .mockup-img.right {
+    width: 300px;
+    height: 150px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mockup-img.center {
+    width: 180px;
+    height: 130px;
   }
 }
 
@@ -554,27 +606,6 @@
 .provide-images.animate-right > img:nth-child(1) { animation-delay: 0.2s; }
 .provide-images.animate-right > img:nth-child(2) { animation-delay: 0.5s; }
 .provide-images.animate-right > img:nth-child(3) { animation-delay: 0.8s; }
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideInRight {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
 .team-section {
   width: 100%;
@@ -613,23 +644,23 @@
 }
 
 .team-card {
-  background: rgba(24, 24, 36, 0.95);
-  border: 2px solid var(--primary-orange, #ff9800);
+  background: var(--card-bg);
+  border: var(--card-border);
   border-radius: 18px;
   min-width: 260px;
   max-width: 320px;
   padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   color: #fff;
   font-family: 'Poppins', Arial, sans-serif;
-  box-shadow: 0 2px 16px 0 #ff98001a;
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: box-shadow 0.25s;
-}
 
-.team-card:hover {
-  box-shadow: 0 8px 32px 0 #ff980044;
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
 }
 
 .team-name {
@@ -652,19 +683,14 @@
   text-align: justify;
 }
 
-@media (max-width: 900px) {
-  .team-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .team-card {
-    min-width: 0;
-    max-width: 95vw;
-    width: 95vw;
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
-  .team-title {
-    font-size: 2.1rem;
+.service-card, .team-card, .trusted-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.25s;
+  
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
   }
 }

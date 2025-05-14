@@ -1,0 +1,14 @@
+<mat-toolbar class="header" [class.scrolled]="isScrolled" [class.blur-bg]="blurBg" [ngStyle]="{'background-color': blurBg ? '#181824' : 'rgba(24,24,36,' + headerOpacity + ')', 'backdrop-filter': blurBg ? 'blur(10px)' : 'none'}">
+  <div class="logo-group">
+    <img src="assets/images/logo/logo.jpg" alt="Logo IDS" class="logo-img" />
+    <span class="logo-text">IDS Informática Villa Clara</span>
+  </div>
+  <span class="spacer"></span>
+  <nav class="nav-links">
+    <a mat-button href="#inicio">Inicio</a>
+    <a mat-button href="#servicios">Servicios</a>
+    <a mat-button href="#proyectos">Proyectos</a>
+    <a mat-button href="#nosotros">Nosotros</a>
+    <a mat-button href="#contacto">Contacto</a>
+  </nav>
+</mat-toolbar>

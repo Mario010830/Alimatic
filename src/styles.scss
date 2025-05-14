@@ -1,20 +1,10 @@
-@import './app/styles/animations.scss';
+
 
 :root {
   --background-animation-duration: 20s;
   --primary-orange: #FF6B00;
   --primary-gray: #333333;
   --header-height: 80px;
-  --card-bg: rgba(24, 24, 36, 0.95);
-  --card-border: 2px solid var(--primary-orange, #ff9800);
-  --card-shadow: 0 2px 16px 0 #ff98001a;
-  --card-shadow-hover: 0 8px 32px 0 #ff980044;
-  --section-padding: 5rem 0;
-  --border-radius-lg: 18px;
-  --border-radius-md: 16px;
-  --border-radius-sm: 8px;
-  --transition-base: 0.25s cubic-bezier(.4,2,.6,1);
-  --font-family-base: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -128,43 +118,4 @@ body {
   max-width: 800px;
   padding: 0 1rem;
 
-}
-
-// Estilos comunes para secciones
-.section-base {
-  width: 100%;
-  padding: var(--section-padding);
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-// Estilos comunes para títulos
-.title-base {
-  font-family: var(--font-family-base);
-  font-weight: 900;
-  text-align: center;
-  letter-spacing: -1px;
-  color: var(--primary-orange);
-}
-
-// Estilos comunes para contenedores
-.container-base {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-// Media queries comunes
-@media (max-width: 1200px) {
-  .container-base {
-    max-width: 98vw;
-  }
-}
-
-@media (max-width: 900px) {
-  .section-base {
-    padding: 3rem 0;
-  }
 }

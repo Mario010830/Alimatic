@@ -44,7 +44,7 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-100px);
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
@@ -65,7 +65,7 @@
   width: auto;
   max-width: 800px;
   padding: 0 1rem;
-  font-family: var(--font-family-base);
+  font-family: 'Poppins', Arial, sans-serif;
 
   h1 {
     font-size: 4.5rem;
@@ -77,7 +77,7 @@
   }
 
   .orange {
-    color: var(--primary-orange);
+    color: #ff9800;
     font-size: 3rem;
     font-weight: 800;
     margin: 0 0 0.3rem 0;
@@ -110,18 +110,19 @@
     font-size: 1.18rem;
     font-weight: 700;
     padding: 1.1rem 2.8rem;
-    border-radius: var(--border-radius-sm);
+    border-radius: 8px;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    background: var(--primary-orange);
+  }
+  .main-btn {
+    background: #ff9800;
     color: #fff;
     border: none;
-
-    &.outlined {
-      background: transparent;
-      color: var(--primary-orange);
-      border: 2px solid var(--primary-orange);
-    }
+  }
+  .main-btn.outlined {
+    background: transparent;
+    color: #ff9800;
+    border: 2px solid #ff9800;
   }
 }
 
@@ -159,56 +160,31 @@
   justify-content: center;
 }
 
-.service-card, .team-card, .trusted-card {
-  background: var(--card-bg);
-  border: var(--card-border);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--card-shadow);
-  transition: var(--transition-base);
-  
-  &:hover {
-    box-shadow: var(--card-shadow-hover);
-  }
-}
-
 .service-card {
-  position: relative;
-  overflow: hidden;
+  background: rgba(24, 24, 36, 0.95);
   color: #fff;
+  border-radius: 22px;
   min-width: 260px;
   min-height: 160px;
   width: 320px;
   height: 180px;
   font-size: 3rem;
-  font-family: var(--font-family-base);
+  font-family: 'Poppins', Arial, sans-serif;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 16px 0 #ff98001a;
   letter-spacing: 1px;
   cursor: pointer;
-
-  &:hover {
-    transform: scale(1.10);
-  }
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+  border: 2px solid transparent;
 }
 
-.service-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 22px;
-  display: block;
-}
-
-.service-title-orange {
-  color: var(--primary-orange, #ff9800);
-  font-size: 2rem;
-  font-family: 'Poppins', Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-  display: inline-block;
+.service-card:hover {
+  transform: scale(1.10);
+  box-shadow: 0 8px 32px 0 #ff980044;
+  border: 2px solid var(--primary-orange, #ff9800);
 }
 
 .service-desc {
@@ -362,6 +338,9 @@
   }
 
   .trusted-card {
+    background: rgba(24, 24, 36, 0.95);
+    border: 2px solid #ff9800;
+    border-radius: 16px;
     min-height: 110px;
     display: flex;
     align-items: center;
@@ -369,7 +348,13 @@
     font-size: 1.35rem;
     font-weight: 600;
     color: #fff;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 16px 0 #ff98001a;
     letter-spacing: 0.5px;
+  }
+  .trusted-card:hover {
+    border-color: #ffa733;
+    box-shadow: 0 4px 24px 0 #ff980044;
   }
 }
 
@@ -483,7 +468,7 @@
 
 @keyframes slideInRight {
   from {
-    transform: translateX(100px);
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
@@ -503,18 +488,9 @@
   }
   .provide-images {
     margin-top: 3rem;
-    img {
-      width: 290px;
-    }
   }
-  .service-card {
-    width: 220px;
-    height: 140px;
-    font-size: 2.1rem;
-  }
-  .service-desc {
-    font-size: 1.1rem;
-    max-width: 260px;
+  .provide-images img {
+    width: 290px;
   }
 }
 @media (max-width: 900px) {
@@ -532,53 +508,10 @@
   }
   .provide-images {
     margin-top: 2rem;
-    img {
-      width: 98vw;
-      max-width: 410px;
-    }
   }
-  .service-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-  }
-  .service-card {
-    width: 90vw;
-    min-width: 0;
-    height: 90px;
-    font-size: 1.3rem;
-  }
-  .service-desc {
-    font-size: 1rem;
-    max-width: 95vw;
-    margin-left: 0;
-  }
-  .team-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .team-card {
-    min-width: 0;
-    max-width: 95vw;
-    width: 95vw;
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
-  .team-title {
-    font-size: 2.1rem;
-  }
-  .mockup-row {
-    gap: 1.2rem;
-  }
-  .mockup-img.left, .mockup-img.right {
-    width: 300px;
-    height: 150px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .mockup-img.center {
-    width: 180px;
-    height: 130px;
+  .provide-images img {
+    width: 98vw;
+    max-width: 410px;
   }
 }
 
@@ -601,6 +534,27 @@
 .provide-images.animate-right > img:nth-child(1) { animation-delay: 0.2s; }
 .provide-images.animate-right > img:nth-child(2) { animation-delay: 0.5s; }
 .provide-images.animate-right > img:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 .team-section {
   width: 100%;
@@ -639,14 +593,23 @@
 }
 
 .team-card {
+  background: rgba(24, 24, 36, 0.95);
+  border: 2px solid var(--primary-orange, #ff9800);
+  border-radius: 18px;
   min-width: 260px;
   max-width: 320px;
-  padding: 2.2rem 1.5rem 1.5rem;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   color: #fff;
-  font-family: var(--font-family-base);
+  font-family: 'Poppins', Arial, sans-serif;
+  box-shadow: 0 2px 16px 0 #ff98001a;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: box-shadow 0.25s;
+}
+
+.team-card:hover {
+  box-shadow: 0 8px 32px 0 #ff980044;
 }
 
 .team-name {
@@ -667,4 +630,21 @@
   font-weight: 400;
   color: #e0e0e0;
   text-align: justify;
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .team-card {
+    min-width: 0;
+    max-width: 95vw;
+    width: 95vw;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .team-title {
+    font-size: 2.1rem;
+  }
 }

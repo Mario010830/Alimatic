@@ -167,30 +167,59 @@
   min-width: 260px;
   min-height: 160px;
   width: 320px;
-  height: auto;
-  padding: 2rem;
+  height: 180px;
   font-family: 'Poppins', Arial, sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 2px 16px 0 #ff98001a;
   letter-spacing: 1px;
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
   border: 2px solid transparent;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 
-  h3.orange {
-    color: var(--primary-orange, #ff9800);
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 0 0 1rem 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
+}
+
+.servicio-piab {
+  background-image: url('../../../assets/images/services/piab.jpg');
+}
+
+.servicio-pesca {
+  background-image: url('../../../assets/images/services/pesca.jpg');
 }
 
 .service-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 32px 0 #ff980044;
   border: 2px solid var(--primary-orange, #ff9800);
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 420px;
+}
+
+.service-content h3.orange {
+  color: var(--primary-orange, #ff9800);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
 }
 
 .service-desc {
@@ -205,11 +234,10 @@
 @media (max-width: 1100px) {
   .service-card {
     width: 220px;
-    padding: 1.5rem;
-    
-    h3.orange {
-      font-size: 2rem;
-    }
+    height: 140px;
+  }
+  .service-content h3.orange {
+    font-size: 2rem;
   }
   .service-desc {
     font-size: 1rem;
@@ -225,11 +253,14 @@
   .service-card {
     width: 90vw;
     min-width: 0;
-    padding: 1.2rem;
-    
-    h3.orange {
-      font-size: 1.8rem;
-    }
+    height: 90px;
+  }
+  .service-content {
+    align-items: center;
+    text-align: center;
+  }
+  .service-content h3.orange {
+    font-size: 1.8rem;
   }
   .service-desc {
     font-size: 0.95rem;
@@ -653,12 +684,4 @@
   .team-title {
     font-size: 2.1rem;
   }
-}
-
-.servicio-piab {
-  background-image: url('../../../assets/images/services/piab.jpg');
-}
-
-.servicio-pesca {
-  background-image: url('../../../assets/images/services/pesca.jpg');
 }

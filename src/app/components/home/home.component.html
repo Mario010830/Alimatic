@@ -34,49 +34,106 @@
   <section class="trusted-companies">
     <h2 class="trusted-title">Con la confianza de más de 50 empresas</h2>
     <div class="trusted-grid">
-      <div class="trusted-card">Empresa 1</div>
-      <div class="trusted-card">Empresa 2</div>
-      <div class="trusted-card">Empresa 3</div>
-      <div class="trusted-card">Empresa 4</div>
-      <div class="trusted-card">Empresa 5</div>
-      <div class="trusted-card">Empresa 6</div>
-      <div class="trusted-card">Empresa 7</div>
-      <div class="trusted-card">Empresa 8</div>
+      <div class="trusted-card"><img src="assets/images/companies/1.jpg" alt="Empresa 1" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/2.jpg" alt="Empresa 2" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/3.jpg" alt="Empresa 3" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/4.jpg" alt="Empresa 4" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/5.jpg" alt="Empresa 5" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/6.jpg" alt="Empresa 6" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/7.jpg" alt="Empresa 7" class="trusted-logo"></div>
+      <div class="trusted-card"><img src="assets/images/companies/8.jpg" alt="Empresa 8" class="trusted-logo"></div>
+    </div>
+  </section>
+
+  <section class="provide-section">
+    <div class="provide-container">
+      <div class="provide-text" #provideText>
+        <h2 class="ofrecemos-title"><span class="orange">Ofrecemos</span></h2>
+        <div class="provide-block">
+          <h3><span class="orange">Levantamiento</span> de Requisitos</h3>
+          <ul>
+            <li>Crear especificaciones claras que cubran funcionalidad, apariencia y requisitos no funcionales como rendimiento y escalabilidad.</li>
+            <li>Ayudamos a nuestros clientes a documentar sus requerimientos haciendo las preguntas correctas.</li>
+            <li>Recomendamos escenarios que no se hayan considerado en las especificaciones originales.</li>
+          </ul>
+        </div>
+        <div class="provide-block">
+          <h3><span class="orange">Ventas</span> Estatales</h3>
+          <ul>
+            <li>Te ayudamos a elegir los mejores productos para tus necesidades, ofreciendo soluciones que realmente te hacen la vida más fácil.</li>
+            <li>Nos aseguramos de que cada producto sea funcional, accesible y fácil de usar, para que empieces a disfrutarlo desde el primer día.</li>
+            <li>Trabajamos contigo de cerca, presentando opciones y ajustando detalles hasta que estés completamente satisfecho con tu compra.</li>
+          </ul>
+        </div>
+        <div class="provide-block">
+          <h3><span class="orange">Desarrollo</span> de Software</h3>
+          <ul>
+            <li>Desarrollo backend en la nube o local, APIs en .Net, NodeJS, PHP, etc.</li>
+            <li>Frontend con Angular, React u otros frameworks modernos.</li>
+            <li>Desarrollo móvil nativo o híbrido.</li>
+          </ul>
+        </div>
+        <div class="provide-block">
+          <h3><span class="orange">Pruebas</span> de Software</h3>
+          <ul>
+            <li>Implementación de pruebas unitarias y automatizadas.</li>
+            <li>Equipo de QA experimentado que prueba rigurosamente antes de llegar al usuario final.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="provide-images" #provideImages>
+        <img src="assets/images/provider/provider1.jpg" alt="Provider 1">
+        <img src="assets/images/provider/provider2.jpg" alt="Provider 2">
+        <img src="assets/images/provider/provider3.jpg" alt="Provider 3">
+      </div>
     </div>
   </section>
 
   <section class="services-section">
     <div class="container">
-      <h2 class="section-heading">Servicios</h2>
+      <h2 class="section-heading servicios-title">Servicios</h2>
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-laptop-code"></i>
+        <div class="service-row">
+          <div class="service-card servicio-piab">
+            <img src="assets/images/services/piab.jpg" alt="PIAB" class="service-img">
           </div>
-          <h3>Desarrollo de Software</h3>
-          <p>Soluciones personalizadas para optimizar sus procesos empresariales</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-network-wired"></i>
+          <div class="service-desc">
+            <span class="service-title-orange">PIAB</span><br>
+            Plataforma Web para la generación de licencias para alimentos y bebidas.
           </div>
-          <h3>Infraestructura IT</h3>
-          <p>Diseño e implementación de redes y sistemas informáticos</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
+        <div class="service-row">
+          <div class="service-card servicio-pesca">
+            <img src="assets/images/services/pesca.jpg" alt="PESCA" class="service-img">
           </div>
-          <h3>Ciberseguridad</h3>
-          <p>Protección integral de sus sistemas y datos</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cloud"></i>
+          <div class="service-desc">
+            <span class="service-title-orange">PESCA</span><br>
+            Plataforma Web para la generación de licencias de pesca.
           </div>
-          <h3>Servicios Cloud</h3>
-          <p>Soluciones en la nube para mayor flexibilidad y escalabilidad</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Nuestro equipo -->
+  <section class="team-section">
+    <h2 class="team-title">Nuestro equipo</h2>
+    <p class="team-subtitle">Nuestro equipo es tu equipo. Estamos aquí para ayudarte a ti y a tu empresa a brillar. Tu éxito es el nuestro.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">Alain Sanchez</div>
+        <div class="team-role">Director de UEB Informática Villa Clara</div>
+        <div class="team-desc">Ingeniero informático, graduado en la UCI, con más de 5 años de experiencia liderando proyectos y empresas.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Martha Portal</div>
+        <div class="team-role">Esp. B Gestión de Recursos Humanos</div>
+        <div class="team-desc">Profesional comprometida con el desarrollo estratégico de personas y procesos. Con experiencia en selección, capacitación y gestión del desempeño.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Floricel Rosabal</div>
+        <div class="team-role">Jefa de Servicios</div>
+        <div class="team-desc">Excelente profesional en el área de gestión de servicios, con más de 10 años de experiencia en el sector.</div>
       </div>
     </div>
   </section>

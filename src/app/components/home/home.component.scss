@@ -65,7 +65,7 @@
   width: auto;
   max-width: 800px;
   padding: 0 1rem;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: var(--font-family-base);
 
   h1 {
     font-size: 4.5rem;
@@ -77,7 +77,7 @@
   }
 
   .orange {
-    color: #ff9800;
+    color: var(--primary-orange);
     font-size: 3rem;
     font-weight: 800;
     margin: 0 0 0.3rem 0;
@@ -110,19 +110,18 @@
     font-size: 1.18rem;
     font-weight: 700;
     padding: 1.1rem 2.8rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .main-btn {
-    background: #ff9800;
+    background: var(--primary-orange);
     color: #fff;
     border: none;
-  }
-  .main-btn.outlined {
-    background: transparent;
-    color: #ff9800;
-    border: 2px solid #ff9800;
+
+    &.outlined {
+      background: transparent;
+      color: var(--primary-orange);
+      border: 2px solid var(--primary-orange);
+    }
   }
 }
 
@@ -160,31 +159,37 @@
   justify-content: center;
 }
 
+.service-card, .team-card, .trusted-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-base);
+  
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+}
+
 .service-card {
   position: relative;
   overflow: hidden;
-  background: var(--card-bg);
   color: #fff;
-  border-radius: 18px;
   min-width: 260px;
   min-height: 160px;
   width: 320px;
   height: 180px;
   font-size: 3rem;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: var(--font-family-base);
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--card-shadow);
   letter-spacing: 1px;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
-  border: var(--card-border);
 
   &:hover {
     transform: scale(1.10);
-    box-shadow: var(--card-shadow-hover);
   }
 }
 
@@ -357,9 +362,6 @@
   }
 
   .trusted-card {
-    background: var(--card-bg);
-    border: var(--card-border);
-    border-radius: 16px;
     min-height: 110px;
     display: flex;
     align-items: center;
@@ -367,14 +369,7 @@
     font-size: 1.35rem;
     font-weight: 600;
     color: #fff;
-    transition: box-shadow 0.2s, border-color 0.2s;
-    box-shadow: var(--card-shadow);
     letter-spacing: 0.5px;
-
-    &:hover {
-      border-color: #ffa733;
-      box-shadow: var(--card-shadow-hover);
-    }
   }
 }
 
@@ -644,23 +639,14 @@
 }
 
 .team-card {
-  background: var(--card-bg);
-  border: var(--card-border);
-  border-radius: 18px;
   min-width: 260px;
   max-width: 320px;
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2.2rem 1.5rem 1.5rem;
   color: #fff;
-  font-family: 'Poppins', Arial, sans-serif;
-  box-shadow: var(--card-shadow);
+  font-family: var(--font-family-base);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: box-shadow 0.25s;
-
-  &:hover {
-    box-shadow: var(--card-shadow-hover);
-  }
 }
 
 .team-name {
@@ -681,16 +667,4 @@
   font-weight: 400;
   color: #e0e0e0;
   text-align: justify;
-}
-
-.service-card, .team-card, .trusted-card {
-  background: var(--card-bg);
-  border: var(--card-border);
-  border-radius: 18px;
-  box-shadow: var(--card-shadow);
-  transition: box-shadow 0.25s;
-  
-  &:hover {
-    box-shadow: var(--card-shadow-hover);
-  }
 }

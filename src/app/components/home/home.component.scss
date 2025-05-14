@@ -1,24 +1,9 @@
-// Variables globales
-$primary-orange: #ff9800;
-$dark-bg: rgba(24, 24, 36, 0.95);
-$font-family: 'Poppins', Arial, sans-serif;
-
-// Animaciones comunes
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; }
-  5%, 25% { opacity: 1; }
-  30% { opacity: 0; }
-}
-
-@keyframes slideIn {
-  from { transform: translateX(var(--slide-from)); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-// Estilos base
 .animated-background {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background: #000;
   overflow: hidden;
@@ -26,62 +11,78 @@ $font-family: 'Poppins', Arial, sans-serif;
 
 .background-image {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   background-size: cover;
   background-position: center;
   animation: fadeInOut 16s linear infinite;
-  
   &::after {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
-  
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) { animation-delay: #{($i - 1) * 4}s; }
+}
+
+/* Ajustar delays para 4 imágenes, cada una visible 25% del tiempo */
+.background-image:nth-child(1) { animation-delay: 0s; }
+.background-image:nth-child(2) { animation-delay: 4s; }
+.background-image:nth-child(3) { animation-delay: 8s; }
+.background-image:nth-child(4) { animation-delay: 12s; }
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-// Sección Hero
-.hero-section {
-  position: relative;
-  min-height: 105vh;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  background: transparent;
-}
-
+/* Section Title Styles */
 .section-title {
   position: absolute;
   top: 28%;
   left: 8vw;
+  transform: none;
+  text-align: left;
   color: white;
   z-index: 1;
+  width: auto;
   max-width: 800px;
   padding: 0 1rem;
-  font-family: $font-family;
+  font-family: 'Poppins', Arial, sans-serif;
 
   h1 {
     font-size: 4.5rem;
     font-weight: 900;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.5rem 0;
     line-height: 1.08;
     letter-spacing: -1.5px;
-    animation: slideIn 0.8s ease-out forwards;
-    --slide-from: -100%;
+    animation: slideInLeft 0.8s ease-out forwards;
   }
 
   .orange {
-    color: $primary-orange;
+    color: #ff9800;
     font-size: 3rem;
     font-weight: 800;
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.3rem 0;
     letter-spacing: 0.5px;
-    animation: slideIn 0.8s ease-out 0.2s forwards;
-    --slide-from: -100%;
+    animation: slideInLeft 0.8s ease-out 0.2s forwards;
     opacity: 0;
   }
 
@@ -93,8 +94,7 @@ $font-family: 'Poppins', Arial, sans-serif;
     margin-bottom: 1.2rem;
     max-width: 600px;
     line-height: 1.5;
-    animation: slideIn 0.8s ease-out 0.4s forwards;
-    --slide-from: -100%;
+    animation: slideInLeft 0.8s ease-out 0.4s forwards;
     opacity: 0;
   }
 
@@ -102,8 +102,7 @@ $font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     gap: 1.2rem;
     align-items: center;
-    animation: slideIn 0.8s ease-out 0.6s forwards;
-    --slide-from: -100%;
+    animation: slideInLeft 0.8s ease-out 0.6s forwards;
     opacity: 0;
   }
 
@@ -114,80 +113,91 @@ $font-family: 'Poppins', Arial, sans-serif;
     border-radius: 8px;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    
-    &.outlined {
-      background: transparent;
-      color: $primary-orange;
-      border: 2px solid $primary-orange;
-    }
+  }
+  .main-btn {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+  }
+  .main-btn.outlined {
+    background: transparent;
+    color: #ff9800;
+    border: 2px solid #ff9800;
   }
 }
 
-// Sección Servicios
-.services-section {
-  .servicios-title {
-    font-size: 3.2rem;
-    color: $primary-orange;
-    font-family: $font-family;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    letter-spacing: -1px;
-  }
-
-  .services-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2.8rem;
-  }
-
-  .service-row {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    justify-content: center;
-  }
-
-  .service-card {
-    background: $dark-bg;
-    color: #fff;
-    border-radius: 22px;
-    min-width: 260px;
-    min-height: 160px;
-    width: 320px;
-    height: 180px;
-    font-size: 3rem;
-    font-family: $font-family;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 16px 0 #ff98001a;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
-    border: 2px solid transparent;
-
-    &:hover {
-      transform: scale(1.10);
-      box-shadow: 0 8px 32px 0 #ff980044;
-      border-color: $primary-orange;
-    }
-  }
-
-  .service-desc {
-    color: #fff;
-    font-family: $font-family;
-    font-size: 1.35rem;
-    font-weight: 400;
-    line-height: 1.4;
-    max-width: 420px;
-    margin-left: 0.5rem;
-    text-align: justify;
-  }
+.hero-section {
+  position: relative;
+  min-height: 105vh;
+  height: 105vh;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  background: transparent;
 }
 
-// Media Queries
+.servicios-title {
+  font-size: 3.2rem;
+  color: var(--primary-orange, #ff9800);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -1px;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.service-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: rgba(24, 24, 36, 0.95);
+  color: #fff;
+  border-radius: 22px;
+  min-width: 260px;
+  min-height: 160px;
+  width: 320px;
+  height: 180px;
+  font-size: 3rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px 0 #ff98001a;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+  border: 2px solid transparent;
+}
+
+.service-card:hover {
+  transform: scale(1.10);
+  box-shadow: 0 8px 32px 0 #ff980044;
+  border: 2px solid var(--primary-orange, #ff9800);
+}
+
+.service-desc {
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 420px;
+  margin-left: 0.5rem;
+  text-align: justify;
+}
+
 @media (max-width: 1100px) {
   .service-card {
     width: 220px;
@@ -197,9 +207,9 @@ $font-family: 'Poppins', Arial, sans-serif;
   .service-desc {
     font-size: 1.1rem;
     max-width: 260px;
+    text-align: justify;
   }
 }
-
 @media (max-width: 700px) {
   .service-row {
     flex-direction: column;
@@ -215,6 +225,7 @@ $font-family: 'Poppins', Arial, sans-serif;
   .service-desc {
     font-size: 1rem;
     max-width: 95vw;
+    text-align: justify;
     margin-left: 0;
   }
 }
@@ -384,7 +395,7 @@ $font-family: 'Poppins', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  animation: slideIn 1s cubic-bezier(.4,2,.6,1) both;
+  animation: slideInLeft 1s cubic-bezier(.4,2,.6,1) both;
   font-family: 'Poppins', Arial, sans-serif;
   text-align: justify;
 }
@@ -399,7 +410,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 }
 
 .provide-text .orange {
-  color: $primary-orange;
+  color: var(--primary-orange, #ff9800);
 }
 
 .provide-block {
@@ -415,7 +426,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 }
 
 .provide-block .orange {
-  color: $primary-orange;
+  color: var(--primary-orange, #ff9800);
 }
 
 .provide-block ul {
@@ -440,7 +451,7 @@ $font-family: 'Poppins', Arial, sans-serif;
   justify-content: flex-start;
   gap: 1.2rem;
   height: 100%;
-  animation: slideIn 1s cubic-bezier(.4,2,.6,1) both;
+  animation: slideInRight 1s cubic-bezier(.4,2,.6,1) both;
   margin-top: 5.5rem;
 }
 
@@ -453,6 +464,17 @@ $font-family: 'Poppins', Arial, sans-serif;
   background: #181824;
   border: none;
   transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -496,7 +518,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 .provide-text.animate-left > * {
   opacity: 0;
   transform: translateX(-100px);
-  animation: slideIn 1.2s cubic-bezier(.4,2,.6,1) forwards;
+  animation: slideInLeft 1.2s cubic-bezier(.4,2,.6,1) forwards;
 }
 .provide-text.animate-left > *:nth-child(1) { animation-delay: 0.1s; }
 .provide-text.animate-left > *:nth-child(2) { animation-delay: 0.3s; }
@@ -507,11 +529,32 @@ $font-family: 'Poppins', Arial, sans-serif;
 .provide-images.animate-right > img {
   opacity: 0;
   transform: translateX(100px);
-  animation: slideIn 1.2s cubic-bezier(.4,2,.6,1) forwards;
+  animation: slideInRight 1.2s cubic-bezier(.4,2,.6,1) forwards;
 }
 .provide-images.animate-right > img:nth-child(1) { animation-delay: 0.2s; }
 .provide-images.animate-right > img:nth-child(2) { animation-delay: 0.5s; }
 .provide-images.animate-right > img:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 .team-section {
   width: 100%;
@@ -524,7 +567,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 
 .team-title {
   font-size: 3.2rem;
-  color: $primary-orange;
+  color: var(--primary-orange, #ff9800);
   font-family: 'Poppins', Arial, sans-serif;
   font-weight: 900;
   text-align: center;
@@ -551,7 +594,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 
 .team-card {
   background: rgba(24, 24, 36, 0.95);
-  border: 2px solid $primary-orange;
+  border: 2px solid var(--primary-orange, #ff9800);
   border-radius: 18px;
   min-width: 260px;
   max-width: 320px;
@@ -572,7 +615,7 @@ $font-family: 'Poppins', Arial, sans-serif;
 .team-name {
   font-size: 1.3rem;
   font-weight: 700;
-  color: $primary-orange;
+  color: var(--primary-orange, #ff9800);
   margin-bottom: 0.3rem;
 }
 

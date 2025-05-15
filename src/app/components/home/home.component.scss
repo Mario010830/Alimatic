@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
   background: #000;
   overflow: hidden;
@@ -128,12 +128,18 @@
 
 .hero-section {
   position: relative;
-  min-height: 105vh;
-  height: 105vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   z-index: 1;
   background: transparent;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  background: #181824;
+  min-height: 100vh;
 }
 
 .servicios-title {
@@ -148,8 +154,51 @@
 
 .services-grid {
   display: flex;
+  flex-direction: row;
+  gap: 2.8rem;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-column {
+  display: flex;
   flex-direction: column;
   gap: 2.8rem;
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s cubic-bezier(.4,2,.6,1);
+}
+
+.services-column.animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-column .service-row {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(.4,2,.6,1);
+}
+
+.services-column.animate-up .service-row:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.services-column.animate-up .service-row:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.services-column.animate-up .service-row:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
 }
 
 .service-row {
@@ -157,7 +206,7 @@
   flex-direction: row;
   align-items: center;
   gap: 2.5rem;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .service-card {
@@ -200,6 +249,19 @@
 
 .servicio-pesca {
   background-image: url('../../../assets/images/services/pesca.jpg');
+}
+
+.servicio-tienda {
+  background: rgba(24, 24, 36, 0.95);
+  border: 2px solid var(--primary-orange, #ff9800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: '🛍️';
+    font-size: 2.5rem;
+  }
 }
 
 .service-card:hover {
@@ -271,15 +333,15 @@
   background: linear-gradient(180deg, rgba(20,20,28,0.92) 0px, #181824 100%);
   backdrop-filter: blur(8px);
   width: 100%;
-  min-height: 100vh;
   position: relative;
   z-index: 1;
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 4rem;
 }
 
 .mockup-gallery {
-  transform: translateY(-60px);
+  transform: translateY(-30px);
   padding-top: 0;
   z-index: 3;
 
@@ -641,8 +703,25 @@
   box-shadow: 0 2px 16px 0 #ff98001a;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   transition: box-shadow 0.25s;
+  text-align: center;
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--primary-orange, #ff9800);
+  box-shadow: 0 4px 16px 0 #ff980033;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .team-card:hover {
@@ -683,5 +762,112 @@
   }
   .team-title {
     font-size: 2.1rem;
+  }
+}
+
+.ver-mas-btn {
+  background: var(--primary-orange, #ff9800);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  font-weight: 500;
+
+  &:hover {
+    background: darken(#ff9800, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Estilos para las cards de relleno
+.servicio-filler-1 {
+  background: rgba(24, 24, 36, 0.95);
+  border: 2px solid var(--primary-orange, #ff9800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: '🔧';
+    font-size: 2.5rem;
+  }
+}
+
+.servicio-filler-2 {
+  background-image: url('/assets/images/services/ventas.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--primary-orange, #ff9800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+
+.servicio-filler-3 {
+  background-image: url('/assets/images/services/soporte.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--primary-orange, #ff9800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .services-column {
+    max-width: 100%;
+  }
+}
+
+.services-column.animate-up > * {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUp 1.2s cubic-bezier(.4,2,.6,1) forwards;
+}
+
+.services-column.animate-up > *:nth-child(1) { animation-delay: 0.1s; }
+.services-column.animate-up > *:nth-child(2) { animation-delay: 0.3s; }
+.services-column.animate-up > *:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

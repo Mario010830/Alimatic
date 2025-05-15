@@ -31,18 +31,20 @@
 
   .nav-links {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
     margin-right: 2vw;
 
     a {
-      color: white;
-      text-decoration: none;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 500;
       font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
       transition: color 0.3s ease;
 
       &:hover {
-        color: var(--primary-orange);
+        color: var(--primary-orange, #ff9800);
       }
     }
   }

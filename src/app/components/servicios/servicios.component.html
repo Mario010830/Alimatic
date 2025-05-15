@@ -7,46 +7,64 @@
   </div>
 
   <div class="services-content">
-    <div class="service-card">
-      <div class="service-icon">
-        <mat-icon>code</mat-icon>
+    <!-- PIAB -->
+    <div class="service-row left" #serviceRow>
+      <div class="service-card servicio-piab"></div>
+      <div class="service-content">
+        <h3 class="orange">PIAB</h3>
+        <p class="service-desc">Plataforma Web para la generación de licencias para alimentos y bebidas. Nuestro sistema PIAB es una solución integral que permite gestionar de manera eficiente todo el proceso de licenciamiento para establecimientos de alimentos y bebidas. Con una interfaz intuitiva y procesos automatizados, facilitamos la gestión tanto para los administradores como para los solicitantes.</p>
+        <a href="https://piab.alinet.cu" target="_blank" class="visit-btn">Visitar Sitio</a>
       </div>
-      <h2>Desarrollo de Software</h2>
-      <p>Creamos soluciones de software personalizadas que se adaptan a las necesidades específicas de tu negocio. Nuestro equipo de desarrolladores utiliza las últimas tecnologías y metodologías ágiles para entregar productos de alta calidad.</p>
-      <ul class="service-features">
-        <li>Aplicaciones Web</li>
-        <li>Aplicaciones Móviles</li>
-        <li>Sistemas Empresariales</li>
-        <li>Integración de Sistemas</li>
-      </ul>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">
-        <mat-icon>cloud</mat-icon>
+    <!-- PESCA -->
+    <div class="service-row right" #serviceRow>
+      <div class="service-content">
+        <h3 class="orange">PESCA</h3>
+        <p class="service-desc">Plataforma Web para la generación de licencias de pesca. Nuestro sistema PESCA está diseñado para optimizar la gestión de licencias de pesca, ofreciendo una solución completa que abarca desde la solicitud hasta la emisión de permisos. Con características avanzadas de seguimiento y control, garantizamos un proceso transparente y eficiente.</p>
+        <button disabled class="visit-btn disabled">Sitio en Mantenimiento</button>
       </div>
-      <h2>Servicios en la Nube</h2>
-      <p>Optimizamos tu infraestructura con soluciones cloud que mejoran la eficiencia y reducen costos. Ofrecemos servicios de migración, gestión y optimización de recursos en la nube.</p>
-      <ul class="service-features">
-        <li>Migración a la Nube</li>
-        <li>Gestión de Infraestructura</li>
-        <li>Almacenamiento en la Nube</li>
-        <li>Backup y Recuperación</li>
-      </ul>
+      <div class="service-card servicio-pesca"></div>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">
-        <mat-icon>security</mat-icon>
+    <!-- Tienda Online -->
+    <div class="service-row left" #serviceRow>
+      <div class="service-card servicio-tienda"></div>
+      <div class="service-content">
+        <h3 class="orange">Tienda Online</h3>
+        <p class="service-desc">Plataforma de comercio electrónico para la venta de productos y servicios. Nuestra solución de tienda online está diseñada para ofrecer una experiencia de compra excepcional, con características avanzadas de gestión de productos, carrito de compras y procesamiento de pagos seguros.</p>
+        <a routerLink="/contacto" class="visit-btn">Contáctenos ahora</a>
       </div>
-      <h2>Ciberseguridad</h2>
-      <p>Protegemos tu información y sistemas con soluciones de seguridad avanzadas. Nuestros expertos implementan medidas preventivas y correctivas para mantener tus datos seguros.</p>
-      <ul class="service-features">
-        <li>Auditorías de Seguridad</li>
-        <li>Protección de Datos</li>
-        <li>Gestión de Riesgos</li>
-        <li>Conformidad Normativa</li>
-      </ul>
+    </div>
+
+    <!-- Sicema -->
+    <div class="service-row right" #serviceRow>
+      <div class="service-content">
+        <h3 class="orange">Sicema</h3>
+        <p class="service-desc">Sistema contable para gestión de empresas. Sicema es una solución integral que automatiza y optimiza todos los procesos contables de tu empresa. Con características avanzadas de reportes y análisis, te ayuda a tomar decisiones informadas sobre tu negocio.</p>
+        <a routerLink="/contacto" class="visit-btn">Contáctenos ahora</a>
+      </div>
+      <div class="service-card servicio-filler-1"></div>
+    </div>
+
+    <!-- Ventas -->
+    <div class="service-row left" #serviceRow>
+      <div class="service-card servicio-filler-2"></div>
+      <div class="service-content">
+        <h3 class="orange">Ventas</h3>
+        <p class="service-desc">Opciones de venta para empresas que requieren grandes cantidades de productos. Nuestro sistema de ventas está diseñado para manejar volúmenes altos de transacciones, con características especiales para la gestión de clientes corporativos y pedidos a gran escala.</p>
+        <a routerLink="/contacto" class="visit-btn">Contáctenos ahora</a>
+      </div>
+    </div>
+
+    <!-- Soporte Técnico -->
+    <div class="service-row right" #serviceRow>
+      <div class="service-content">
+        <h3 class="orange">Soporte Técnico</h3>
+        <p class="service-desc">Asistencia técnica especializada para resolver problemas y optimizar sistemas. Nuestro servicio de soporte técnico ofrece una respuesta rápida y efectiva a cualquier problema técnico que pueda surgir, garantizando la continuidad de tus operaciones.</p>
+        <a routerLink="/contacto" class="visit-btn">Contáctenos ahora</a>
+      </div>
+      <div class="service-card servicio-filler-3"></div>
     </div>
   </div>
 </div>

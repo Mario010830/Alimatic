@@ -102,7 +102,7 @@ export class ContactoComponent implements OnInit {
       const { nombre, email, mensaje } = this.contactForm.value;
 
       const emailData = {
-        to: 'mabel010830@gmail.com',
+        to: 'jdchong6@gmail.com',
         subject: `Nuevo mensaje de contacto de ${nombre}`,
         text: `
           Nombre: ${nombre}

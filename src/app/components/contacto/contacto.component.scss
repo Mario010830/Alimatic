@@ -344,7 +344,7 @@
   background: rgba(24, 24, 36, 0.98);
   border-radius: 18px;
   max-width: 600px;
-  margin: 3rem auto 2rem auto;
+  margin: 0 auto 2rem auto;
   padding: 2.5rem 2rem 2rem 2rem;
   box-shadow: 0 4px 32px 0 #ff980022;
   border: 2px solid var(--primary-orange, #ff9800);
@@ -448,4 +448,11 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  font-family: 'Poppins', Arial, sans-serif;
 } 

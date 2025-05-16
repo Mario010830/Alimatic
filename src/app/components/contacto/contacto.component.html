@@ -56,17 +56,28 @@
           <div class="form-group">
             <label for="nombre">Nombre *</label>
             <input id="nombre" type="text" formControlName="nombre" placeholder="Tu nombre" required />
+            <div class="error-message" *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.invalid">
+              {{ getErrorMessage('nombre') }}
+            </div>
           </div>
           <div class="form-group">
             <label for="email">Correo electrónico *</label>
             <input id="email" type="email" formControlName="email" placeholder="tu@email.com" required />
+            <div class="error-message" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+              {{ getErrorMessage('email') }}
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label for="mensaje">Mensaje *</label>
           <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+          <div class="error-message" *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.invalid">
+            {{ getErrorMessage('mensaje') }}
+          </div>
         </div>
-        <button class="main-btn-orange" type="submit" [disabled]="!contactForm.valid">¡Contáctanos!</button>
+        <button class="main-btn-orange" type="submit" [disabled]="!contactForm.valid || isSubmitting">
+          {{ isSubmitting ? 'Enviando...' : '¡Contáctanos!' }}
+        </button>
       </form>
     </div>
   </div>

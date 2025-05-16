@@ -1,5 +1,3 @@
-
-
 :root {
   --background-animation-duration: 20s;
   --primary-orange: #FF6B00;
@@ -118,4 +116,17 @@ body {
   max-width: 800px;
   padding: 0 1rem;
 
+}
+
+// Estilos para el diálogo personalizado
+.custom-dialog {
+  .mat-mdc-dialog-container {
+    --mdc-dialog-container-color: transparent;
+    --mdc-dialog-container-shape: 16px;
+  }
+
+  .mat-mdc-dialog-surface {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
 }

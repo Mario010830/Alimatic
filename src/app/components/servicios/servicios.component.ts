@@ -25,8 +25,8 @@ export class ServiciosComponent implements AfterViewInit {
       if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
         const options = {
           root: null,
-          rootMargin: '0px',
-          threshold: 0.1
+          rootMargin: '-50px 0px',
+          threshold: 0.2
         };
 
         const observer = new IntersectionObserver((entries) => {
